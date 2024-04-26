@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net7.0;net6.0;net462</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>VandaCloud.Service</RootNamespace>
+    <PackageId>VandaCloud.Service</PackageId>
+    <DebugType>portable</DebugType>
+    <Authors>VandaCloud</Authors>
+    <Company>VandaCloud</Company>
+    <Product>Core Service Library</Product>
+    <Copyright>Copyright © VandaCloud 2024</Copyright>
+    <Description>VandaCloud Core Service is an architectural design pattern which has been developed by Vanda-Cloud Development Project to standardize the architecture of our In-House Development Applications.This service will be built and published as the library or sdk packages on NuGet Microsoft Package Manager for all our In-House Development Applications.</Description>
+    <Summary>VandaCloud Core Service is an architectural design pattern which has been developed by Vanda-Cloud Development Project to standardize the architecture of our In-House Development Applications.</Summary>
+    <PackageTags>VandaCloud;aws;s3;s3fileprovider;s3provider;fileprovider</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>VandaCloud.png</PackageIcon>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vanda-cloud/vandacloud-service</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../CHANGELOG.md"))</PackageReleaseNotes>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>12.0</LangVersion>
+    <SignAssembly>true</SignAssembly>
+    <Version>$(VersionPrefix)</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="**\*.orig" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="LICENSE" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\asset\image\VandaCloud.png" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+</Project>

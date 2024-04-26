@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9ACB2080-3C74-4E64-8035-00F831A9BB79}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		asset\image\VandaCloud.png = asset\image\VandaCloud.png
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VandaCloud.Service.UnitTest", "test\VandaCloud.Service.UnitTest\VandaCloud.Service.UnitTest.csproj", "{049BD395-FDA6-47CB-8114-3850E004F3BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VandaCloud.Service.IntegrationTest", "test\VandaCloud.Service.IntegrationTest\VandaCloud.Service.IntegrationTest.csproj", "{BF4A0842-978E-4C37-B452-4AB1C4884812}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VandaCloud.Service", "src\VandaCloud.Service\VandaCloud.Service.csproj", "{2278C022-E892-441C-9CFE-AFD606662642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VandaCloud.Service.Sample", "VandaCloud.Service.Sample\VandaCloud.Service.Sample.csproj", "{25009BD0-C8D5-4A04-909A-7D695DD44906}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{049BD395-FDA6-47CB-8114-3850E004F3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{049BD395-FDA6-47CB-8114-3850E004F3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{049BD395-FDA6-47CB-8114-3850E004F3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{049BD395-FDA6-47CB-8114-3850E004F3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4A0842-978E-4C37-B452-4AB1C4884812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4A0842-978E-4C37-B452-4AB1C4884812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4A0842-978E-4C37-B452-4AB1C4884812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4A0842-978E-4C37-B452-4AB1C4884812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2278C022-E892-441C-9CFE-AFD606662642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2278C022-E892-441C-9CFE-AFD606662642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2278C022-E892-441C-9CFE-AFD606662642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2278C022-E892-441C-9CFE-AFD606662642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25009BD0-C8D5-4A04-909A-7D695DD44906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25009BD0-C8D5-4A04-909A-7D695DD44906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25009BD0-C8D5-4A04-909A-7D695DD44906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25009BD0-C8D5-4A04-909A-7D695DD44906}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {979B4A57-9C66-4D5A-B065-3028D624B03F}
+	EndGlobalSection
+EndGlobal
