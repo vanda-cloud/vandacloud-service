@@ -2,7 +2,7 @@ name: NuGet Publish
 run-name: ${{ github.actor }} is publishing (${{github.ref_name}}) 🚀
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Enable manual trigger Run workflow on GitHub Actions
   release:
     types: [published]
 #   push:
@@ -24,7 +24,7 @@ jobs:
       - name: Set version
         run: |
           NEW_VERSION=$(echo "${{github.ref_name}}" | sed "s/^v//")
-          sed -i s/$(VersionPrefix)/$NEW_VERSION/g src/VandaCloud.Service/VandaCloud.Service.csproj
+          sed -i s/1.0.0/$NEW_VERSION/g src/VandaCloud.Service/VandaCloud.Service.csproj
       - name: Pack
         run: |
           dotnet pack -c Release -o publish
