@@ -27,7 +27,7 @@ jobs:
           sed -i s/1.0.0/$NEW_VERSION/g src/VandaCloud.Service/VandaCloud.Service.csproj
       - name: Pack
         run: |
-          dotnet pack -c Release -o publish
+          dotnet pack src/VandaCloud.Service/VandaCloud.Service.csproj -c Release -o publish
       - name: Publish
         run: |
           dotnet nuget push publish/VandaCloud.Service.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}}
