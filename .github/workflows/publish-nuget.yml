@@ -1,0 +1,33 @@
+name: NuGet Publish
+run-name: ${{ github.actor }} is publishing (${{github.ref_name}}) 🚀
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+#   push:
+#     tags:
+#       - v*.*.**
+
+jobs:
+  publish-nuget-package:
+    name: Publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Set version
+        run: |
+          NEW_VERSION=$(echo "${{github.ref_name}}" | sed "s/^v//")
+          sed -i s/$(VersionPrefix)/$NEW_VERSION/g vandacloud-service/src/VandaCloud.Service/VandaCloud.Service.csproj.csproj
+      - name: Pack
+        run: |
+          dotnet pack -c Release -o publish
+      - name: Publish
+        run: |
+          dotnet nuget push publish/VandaCloud.Service.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}}
