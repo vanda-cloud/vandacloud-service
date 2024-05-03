@@ -38,4 +38,9 @@
     <None Include="..\..\asset\image\VandaCloud.png" Pack="true" PackagePath="\" Visible="false" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
 </Project>
