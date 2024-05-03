@@ -1,6 +1,5 @@
 using DAD.CoreService.Service.Demo;
 using DAD.CoreService.Service.DemoHello;
-using VandaCloud.Service.Common.ActionFilter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +9,6 @@ builder.Services.AddControllersWithViews();
 // Register Demo Services
 builder.Services.AddScoped<IDemoHelloService, DemoHelloService>();
 builder.Services.AddScoped<IDemoService, DemoService>();
-builder.Services.AddScoped<DemoActionFilter>();
 
 var app = builder.Build();
 
