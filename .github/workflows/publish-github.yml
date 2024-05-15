@@ -1,0 +1,32 @@
+name: Nuget GitHub Publish
+run-name: ${{ github.actor }} is publishing (${{github.ref_name}}) 🚀
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+ 
+jobs:
+  publish-nuget-package:
+    name: Publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Set version
+        run: |
+          NEW_VERSION=$(echo "${{github.ref_name}}" | sed "s/^v//")
+          sed -i s/1.0.0/$NEW_VERSION/g src/VandaCloud.Service/VandaCloud.Service.csproj
+      - name: Pack
+        run: |
+          dotnet pack src/VandaCloud.Service -c Release -o publish
+      - name: Publish
+        run: |
+          dotnet nuget push publish/VandaCloud.Service.*.nupkg -s https://nuget.pkg.github.com/vanda-cloud/index.json -k ${{secrets.NUGET_TOKEN }}
+ 
+# Usage
+# dotnet nuget add source "https://nuget.pkg.github.com/vanda-cloud/index.json" --name "GitHub Feed" --username "GithubUserName" --password NUGET_TOKEN --store-password-in-clear-text
