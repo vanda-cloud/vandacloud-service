@@ -3,8 +3,8 @@ run-name: ${{ github.actor }} is publishing (${{github.ref_name}}) 🚀
 
 on:
   workflow_dispatch: # Enable manual trigger Run workflow on GitHub Actions
-  release:
-    types: [published]
+  # release:
+  #   types: [published]
 #   push:
 #     tags:
 #       - v*.*.**
